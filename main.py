@@ -8,7 +8,7 @@ from typing import List, Optional
 app = FastAPI()
 
 # --- [설정] ---
-HF_TOKEN = "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" # 토큰이 정확한지 다시 확인!
+HF_TOKEN = "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" # 토큰이 정확한지 다시 확인!
 MODEL_ID = "daekeun-ml/koelectra-small-v3-nsmc"
 API_URL = f"https://api-inference.huggingface.co/models/{MODEL_ID}"
 HEADERS = {"Authorization": f"Bearer {HF_TOKEN}"}
