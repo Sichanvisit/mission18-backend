@@ -9,7 +9,7 @@ app = FastAPI()
 # --- [설정] 허깅페이스 API ---
 # 발급받은 hf_... 토큰을 여기에 정확히 입력하세요.
 HF_TOKEN = "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" 
-MODEL_ID = "matthewburke/korean_sentiment"
+MODEL_ID = "daekeun-ml/koelectra-small-v3-nsmc"
 API_URL = f"https://api-inference.huggingface.co/models/{MODEL_ID}"
 HEADERS = {"Authorization": f"Bearer {HF_TOKEN}"}
 
