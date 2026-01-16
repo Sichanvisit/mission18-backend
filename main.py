@@ -1,14 +1,17 @@
-import requests
-import time
 import os
-from fastapi import FastAPI, HTTPException
+import requests
+from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List, Optional
+from dotenv import load_dotenv # 추가
+
+# .env 파일의 내용을 로드합니다 (로컬 테스트용)
+load_dotenv()
 
 app = FastAPI()
 
-# --- [설정] ---
-HF_TOKEN = "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" # 토큰이 정확한지 다시 확인!
+# os.getenv는 로컬에선 .env를, Render에선 설정된 환경변수를 읽습니다.
+HF_TOKEN = os.getenv("HF_TOKEN")
 MODEL_ID = "daekeun-ml/koelectra-small-v3-nsmc"
 API_URL = f"https://api-inference.huggingface.co/models/{MODEL_ID}"
 HEADERS = {"Authorization": f"Bearer {HF_TOKEN}"}
